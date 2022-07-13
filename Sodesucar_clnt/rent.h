@@ -17,12 +17,22 @@ class rent : public QDialog
 public:
     explicit rent(std::string id, QWidget *parent = nullptr);
     ~rent();
-    void show_carlist();
+    void show_carlist(std::string type);
 
 private slots:
     void on_rent_btn_clicked();
 
     void on_exit_btn_clicked();
+
+    void on_all_clicked();
+
+    void on_diesel_clicked();
+
+    void on_gasoline_clicked();
+
+    void on_lpg_clicked();
+
+    void on_elec_clicked();
 
 private:
     Ui::rent *ui;
@@ -32,6 +42,7 @@ private:
     std::string query_string;
 
     std::string id;
+    std::string type;
     int cash;
 };
 

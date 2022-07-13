@@ -38,7 +38,7 @@ void reservation::show_resvlist()
         ui->list->setItem(i,1,new QTableWidgetItem(query.value(1).toString()));
         ui->list->setItem(i,2,new QTableWidgetItem(query.value(2).toString()));
         ui->list->setItem(i,3,new QTableWidgetItem(query.value(3).toString()));
-        ui->list->setItem(i++,4,new QTableWidgetItem(query.value(3).toString()));
+        ui->list->setItem(i++,4,new QTableWidgetItem(query.value(4).toString()));
     }
 }
 

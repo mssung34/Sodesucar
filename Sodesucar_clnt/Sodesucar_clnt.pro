@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     charge.cpp \
+    chat.cpp \
     main.cpp \
     login.cpp \
     mainpage.cpp \
@@ -24,11 +25,13 @@ SOURCES += \
     rent_check.cpp \
     reservation.cpp \
     signup.cpp \
+    sock_connect.cpp \
     tour.cpp \
     user.cpp
 
 HEADERS += \
     charge.h \
+    chat.h \
     database.h \
     login.h \
     mainpage.h \
@@ -36,11 +39,13 @@ HEADERS += \
     rent_check.h \
     reservation.h \
     signup.h \
+    sock_connect.h \
     tour.h \
     user.h
 
 FORMS += \
     charge.ui \
+    chat.ui \
     login.ui \
     mainpage.ui \
     rent.ui \

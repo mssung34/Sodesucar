@@ -54,5 +54,7 @@ void mainpage::on_shop_btn_clicked()
 
 void mainpage::on_chat_btn_clicked()
 {
-
+    chat chat;
+    chat.setModal(true);
+    chat.exec();
 }

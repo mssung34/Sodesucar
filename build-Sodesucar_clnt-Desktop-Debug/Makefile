@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../Sodesucar_clnt -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
+INCPATH       = -I../Sodesucar_clnt -I. -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtSql -isystem /usr/include/x86_64-linux-gnu/qt5/QtNetwork -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I. -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++
 QMAKE         = /usr/lib/qt5/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = Sodesucar_clnt1.0.0
 DISTDIR = /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/.tmp/Sodesucar_clnt1.0.0
 LINK          = g++
 LFLAGS        = 
-LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Sql.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
+LIBS          = $(SUBLIBS) /usr/lib/x86_64-linux-gnu/libQt5Widgets.so /usr/lib/x86_64-linux-gnu/libQt5Gui.so /usr/lib/x86_64-linux-gnu/libQt5Sql.so /usr/lib/x86_64-linux-gnu/libQt5Network.so /usr/lib/x86_64-linux-gnu/libQt5Core.so /usr/lib/x86_64-linux-gnu/libGL.so -lpthread   
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -53,6 +53,7 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../Sodesucar_clnt/charge.cpp \
+		../Sodesucar_clnt/chat.cpp \
 		../Sodesucar_clnt/main.cpp \
 		../Sodesucar_clnt/login.cpp \
 		../Sodesucar_clnt/mainpage.cpp \
@@ -60,8 +61,10 @@ SOURCES       = ../Sodesucar_clnt/charge.cpp \
 		../Sodesucar_clnt/rent_check.cpp \
 		../Sodesucar_clnt/reservation.cpp \
 		../Sodesucar_clnt/signup.cpp \
+		../Sodesucar_clnt/sock_connect.cpp \
 		../Sodesucar_clnt/tour.cpp \
 		../Sodesucar_clnt/user.cpp moc_charge.cpp \
+		moc_chat.cpp \
 		moc_login.cpp \
 		moc_mainpage.cpp \
 		moc_rent.cpp \
@@ -71,6 +74,7 @@ SOURCES       = ../Sodesucar_clnt/charge.cpp \
 		moc_tour.cpp \
 		moc_user.cpp
 OBJECTS       = charge.o \
+		chat.o \
 		main.o \
 		login.o \
 		mainpage.o \
@@ -78,9 +82,11 @@ OBJECTS       = charge.o \
 		rent_check.o \
 		reservation.o \
 		signup.o \
+		sock_connect.o \
 		tour.o \
 		user.o \
 		moc_charge.o \
+		moc_chat.o \
 		moc_login.o \
 		moc_mainpage.o \
 		moc_rent.o \
@@ -166,6 +172,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../Sodesucar_clnt/Sodesucar_clnt.pro ../Sodesucar_clnt/charge.h \
+		../Sodesucar_clnt/chat.h \
 		../Sodesucar_clnt/database.h \
 		../Sodesucar_clnt/login.h \
 		../Sodesucar_clnt/mainpage.h \
@@ -173,8 +180,10 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../Sodesucar_clnt/rent_check.h \
 		../Sodesucar_clnt/reservation.h \
 		../Sodesucar_clnt/signup.h \
+		../Sodesucar_clnt/sock_connect.h \
 		../Sodesucar_clnt/tour.h \
 		../Sodesucar_clnt/user.h ../Sodesucar_clnt/charge.cpp \
+		../Sodesucar_clnt/chat.cpp \
 		../Sodesucar_clnt/main.cpp \
 		../Sodesucar_clnt/login.cpp \
 		../Sodesucar_clnt/mainpage.cpp \
@@ -182,6 +191,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../Sodesucar_clnt/rent_check.cpp \
 		../Sodesucar_clnt/reservation.cpp \
 		../Sodesucar_clnt/signup.cpp \
+		../Sodesucar_clnt/sock_connect.cpp \
 		../Sodesucar_clnt/tour.cpp \
 		../Sodesucar_clnt/user.cpp
 QMAKE_TARGET  = Sodesucar_clnt
@@ -192,7 +202,7 @@ TARGET        = Sodesucar_clnt
 first: all
 ####### Build rules
 
-Sodesucar_clnt: ui_charge.h ui_login.h ui_mainpage.h ui_rent.h ui_rent_check.h ui_reservation.h ui_signup.h ui_tour.h ui_user.h $(OBJECTS)  
+Sodesucar_clnt: ui_charge.h ui_chat.h ui_login.h ui_mainpage.h ui_rent.h ui_rent_check.h ui_reservation.h ui_signup.h ui_tour.h ui_user.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: ../Sodesucar_clnt/Sodesucar_clnt.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -365,9 +375,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Sodesucar_clnt/charge.h ../Sodesucar_clnt/database.h ../Sodesucar_clnt/login.h ../Sodesucar_clnt/mainpage.h ../Sodesucar_clnt/rent.h ../Sodesucar_clnt/rent_check.h ../Sodesucar_clnt/reservation.h ../Sodesucar_clnt/signup.h ../Sodesucar_clnt/tour.h ../Sodesucar_clnt/user.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Sodesucar_clnt/charge.cpp ../Sodesucar_clnt/main.cpp ../Sodesucar_clnt/login.cpp ../Sodesucar_clnt/mainpage.cpp ../Sodesucar_clnt/rent.cpp ../Sodesucar_clnt/rent_check.cpp ../Sodesucar_clnt/reservation.cpp ../Sodesucar_clnt/signup.cpp ../Sodesucar_clnt/tour.cpp ../Sodesucar_clnt/user.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Sodesucar_clnt/charge.ui ../Sodesucar_clnt/login.ui ../Sodesucar_clnt/mainpage.ui ../Sodesucar_clnt/rent.ui ../Sodesucar_clnt/rent_check.ui ../Sodesucar_clnt/reservation.ui ../Sodesucar_clnt/signup.ui ../Sodesucar_clnt/tour.ui ../Sodesucar_clnt/user.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../Sodesucar_clnt/charge.h ../Sodesucar_clnt/chat.h ../Sodesucar_clnt/database.h ../Sodesucar_clnt/login.h ../Sodesucar_clnt/mainpage.h ../Sodesucar_clnt/rent.h ../Sodesucar_clnt/rent_check.h ../Sodesucar_clnt/reservation.h ../Sodesucar_clnt/signup.h ../Sodesucar_clnt/sock_connect.h ../Sodesucar_clnt/tour.h ../Sodesucar_clnt/user.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Sodesucar_clnt/charge.cpp ../Sodesucar_clnt/chat.cpp ../Sodesucar_clnt/main.cpp ../Sodesucar_clnt/login.cpp ../Sodesucar_clnt/mainpage.cpp ../Sodesucar_clnt/rent.cpp ../Sodesucar_clnt/rent_check.cpp ../Sodesucar_clnt/reservation.cpp ../Sodesucar_clnt/signup.cpp ../Sodesucar_clnt/sock_connect.cpp ../Sodesucar_clnt/tour.cpp ../Sodesucar_clnt/user.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Sodesucar_clnt/charge.ui ../Sodesucar_clnt/chat.ui ../Sodesucar_clnt/login.ui ../Sodesucar_clnt/mainpage.ui ../Sodesucar_clnt/rent.ui ../Sodesucar_clnt/rent_check.ui ../Sodesucar_clnt/reservation.ui ../Sodesucar_clnt/signup.ui ../Sodesucar_clnt/tour.ui ../Sodesucar_clnt/user.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -399,14 +409,20 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_charge.cpp moc_login.cpp moc_mainpage.cpp moc_rent.cpp moc_rent_check.cpp moc_reservation.cpp moc_signup.cpp moc_tour.cpp moc_user.cpp
+compiler_moc_header_make_all: moc_charge.cpp moc_chat.cpp moc_login.cpp moc_mainpage.cpp moc_rent.cpp moc_rent_check.cpp moc_reservation.cpp moc_signup.cpp moc_tour.cpp moc_user.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_charge.cpp moc_login.cpp moc_mainpage.cpp moc_rent.cpp moc_rent_check.cpp moc_reservation.cpp moc_signup.cpp moc_tour.cpp moc_user.cpp
+	-$(DEL_FILE) moc_charge.cpp moc_chat.cpp moc_login.cpp moc_mainpage.cpp moc_rent.cpp moc_rent_check.cpp moc_reservation.cpp moc_signup.cpp moc_tour.cpp moc_user.cpp
 moc_charge.cpp: ../Sodesucar_clnt/charge.h \
 		../Sodesucar_clnt/database.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/charge.h -o moc_charge.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/charge.h -o moc_charge.cpp
+
+moc_chat.cpp: ../Sodesucar_clnt/chat.h \
+		../Sodesucar_clnt/sock_connect.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/chat.h -o moc_chat.cpp
 
 moc_login.cpp: ../Sodesucar_clnt/login.h \
 		../Sodesucar_clnt/database.h \
@@ -417,9 +433,11 @@ moc_login.cpp: ../Sodesucar_clnt/login.h \
 		../Sodesucar_clnt/rent_check.h \
 		../Sodesucar_clnt/user.h \
 		../Sodesucar_clnt/reservation.h \
+		../Sodesucar_clnt/chat.h \
+		../Sodesucar_clnt/sock_connect.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/login.h -o moc_login.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/login.h -o moc_login.cpp
 
 moc_mainpage.cpp: ../Sodesucar_clnt/mainpage.h \
 		../Sodesucar_clnt/tour.h \
@@ -428,57 +446,63 @@ moc_mainpage.cpp: ../Sodesucar_clnt/mainpage.h \
 		../Sodesucar_clnt/rent_check.h \
 		../Sodesucar_clnt/user.h \
 		../Sodesucar_clnt/reservation.h \
+		../Sodesucar_clnt/chat.h \
+		../Sodesucar_clnt/sock_connect.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/mainpage.h -o moc_mainpage.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/mainpage.h -o moc_mainpage.cpp
 
 moc_rent.cpp: ../Sodesucar_clnt/rent.h \
 		../Sodesucar_clnt/database.h \
 		../Sodesucar_clnt/rent_check.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/rent.h -o moc_rent.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/rent.h -o moc_rent.cpp
 
 moc_rent_check.cpp: ../Sodesucar_clnt/rent_check.h \
 		../Sodesucar_clnt/database.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/rent_check.h -o moc_rent_check.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/rent_check.h -o moc_rent_check.cpp
 
 moc_reservation.cpp: ../Sodesucar_clnt/reservation.h \
 		../Sodesucar_clnt/database.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/reservation.h -o moc_reservation.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/reservation.h -o moc_reservation.cpp
 
 moc_signup.cpp: ../Sodesucar_clnt/signup.h \
 		../Sodesucar_clnt/database.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/signup.h -o moc_signup.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/signup.h -o moc_signup.cpp
 
 moc_tour.cpp: ../Sodesucar_clnt/tour.h \
 		../Sodesucar_clnt/database.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/tour.h -o moc_tour.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/tour.h -o moc_tour.cpp
 
 moc_user.cpp: ../Sodesucar_clnt/user.h \
 		../Sodesucar_clnt/database.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
-	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/user.h -o moc_user.cpp
+	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/iot/C++/Sodesucar/build-Sodesucar_clnt-Desktop-Debug/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/iot/C++/Sodesucar/Sodesucar_clnt -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtSql -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../Sodesucar_clnt/user.h -o moc_user.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_charge.h ui_login.h ui_mainpage.h ui_rent.h ui_rent_check.h ui_reservation.h ui_signup.h ui_tour.h ui_user.h
+compiler_uic_make_all: ui_charge.h ui_chat.h ui_login.h ui_mainpage.h ui_rent.h ui_rent_check.h ui_reservation.h ui_signup.h ui_tour.h ui_user.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_charge.h ui_login.h ui_mainpage.h ui_rent.h ui_rent_check.h ui_reservation.h ui_signup.h ui_tour.h ui_user.h
+	-$(DEL_FILE) ui_charge.h ui_chat.h ui_login.h ui_mainpage.h ui_rent.h ui_rent_check.h ui_reservation.h ui_signup.h ui_tour.h ui_user.h
 ui_charge.h: ../Sodesucar_clnt/charge.ui \
 		/usr/lib/qt5/bin/uic
 	/usr/lib/qt5/bin/uic ../Sodesucar_clnt/charge.ui -o ui_charge.h
+
+ui_chat.h: ../Sodesucar_clnt/chat.ui \
+		/usr/lib/qt5/bin/uic
+	/usr/lib/qt5/bin/uic ../Sodesucar_clnt/chat.ui -o ui_chat.h
 
 ui_login.h: ../Sodesucar_clnt/login.ui \
 		/usr/lib/qt5/bin/uic
@@ -527,6 +551,11 @@ charge.o: ../Sodesucar_clnt/charge.cpp ../Sodesucar_clnt/charge.h \
 		ui_charge.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o charge.o ../Sodesucar_clnt/charge.cpp
 
+chat.o: ../Sodesucar_clnt/chat.cpp ../Sodesucar_clnt/chat.h \
+		../Sodesucar_clnt/sock_connect.h \
+		ui_chat.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o chat.o ../Sodesucar_clnt/chat.cpp
+
 main.o: ../Sodesucar_clnt/main.cpp ../Sodesucar_clnt/login.h \
 		../Sodesucar_clnt/database.h \
 		../Sodesucar_clnt/signup.h \
@@ -535,7 +564,9 @@ main.o: ../Sodesucar_clnt/main.cpp ../Sodesucar_clnt/login.h \
 		../Sodesucar_clnt/rent.h \
 		../Sodesucar_clnt/rent_check.h \
 		../Sodesucar_clnt/user.h \
-		../Sodesucar_clnt/reservation.h
+		../Sodesucar_clnt/reservation.h \
+		../Sodesucar_clnt/chat.h \
+		../Sodesucar_clnt/sock_connect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Sodesucar_clnt/main.cpp
 
 login.o: ../Sodesucar_clnt/login.cpp ../Sodesucar_clnt/login.h \
@@ -547,6 +578,8 @@ login.o: ../Sodesucar_clnt/login.cpp ../Sodesucar_clnt/login.h \
 		../Sodesucar_clnt/rent_check.h \
 		../Sodesucar_clnt/user.h \
 		../Sodesucar_clnt/reservation.h \
+		../Sodesucar_clnt/chat.h \
+		../Sodesucar_clnt/sock_connect.h \
 		ui_login.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o login.o ../Sodesucar_clnt/login.cpp
 
@@ -557,6 +590,8 @@ mainpage.o: ../Sodesucar_clnt/mainpage.cpp ../Sodesucar_clnt/mainpage.h \
 		../Sodesucar_clnt/rent_check.h \
 		../Sodesucar_clnt/user.h \
 		../Sodesucar_clnt/reservation.h \
+		../Sodesucar_clnt/chat.h \
+		../Sodesucar_clnt/sock_connect.h \
 		ui_mainpage.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainpage.o ../Sodesucar_clnt/mainpage.cpp
 
@@ -581,6 +616,9 @@ signup.o: ../Sodesucar_clnt/signup.cpp ../Sodesucar_clnt/signup.h \
 		ui_signup.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o signup.o ../Sodesucar_clnt/signup.cpp
 
+sock_connect.o: ../Sodesucar_clnt/sock_connect.cpp ../Sodesucar_clnt/sock_connect.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sock_connect.o ../Sodesucar_clnt/sock_connect.cpp
+
 tour.o: ../Sodesucar_clnt/tour.cpp ../Sodesucar_clnt/tour.h \
 		../Sodesucar_clnt/database.h \
 		ui_tour.h
@@ -594,6 +632,9 @@ user.o: ../Sodesucar_clnt/user.cpp ../Sodesucar_clnt/user.h \
 
 moc_charge.o: moc_charge.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_charge.o moc_charge.cpp
+
+moc_chat.o: moc_chat.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_chat.o moc_chat.cpp
 
 moc_login.o: moc_login.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_login.o moc_login.cpp

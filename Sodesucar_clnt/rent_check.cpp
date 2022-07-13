@@ -20,6 +20,7 @@ rent_check::rent_check(vector<string> data, QWidget *parent) :
     total = std::stoi(data[3]);
     cash = std::stoi(data[6]);
     count = std::stoi(data[4]);
+    date = 1;
 
     query_string = "SELECT grade FROM userTBL WHERE ID='" + id + "'";
     query.exec(QString::fromStdString(query_string));
@@ -96,25 +97,33 @@ void rent_check::on_pushButton_clicked()
     }
     else
     {
-        cash = cash - total;
-        count--;
+        if(count <= 0)
+        {
+            QMessageBox::warning(this, "", "재고 부족.");
+        }
+        else
+        {
+            cash = cash - total;
+            count--;
 
-        query_string = "UPDATE userTBL SET cash='" + std::to_string(cash) + "' WHERE ID='" + id + "'";
-        query.exec(QString::fromStdString(query_string));
+            query_string = "UPDATE userTBL SET cash='" + std::to_string(cash) + "' WHERE ID='" + id + "'";
+            query.exec(QString::fromStdString(query_string));
 
-        query_string = "UPDATE carTBL SET count='" + std::to_string(count) + "' WHERE name='" + car_name + "'";
-        query.exec(QString::fromStdString(query_string));
+            query_string = "UPDATE carTBL SET count='" + std::to_string(count) + "' WHERE name='" + car_name + "'";
+            query.exec(QString::fromStdString(query_string));
 
-        query.prepare("INSERT INTO reservationTBL (id, car_kind, car_price, date) "
-                          "VALUES (?, ?, ?, ?)");
-        query.addBindValue(QString::fromStdString(id));
-        query.addBindValue(QString::fromStdString(car_name));
-        query.addBindValue(QString::number(total));
-        query.addBindValue(QString::number(date));
-        query.exec();
+            query.prepare("INSERT INTO reservationTBL (id, car_kind, car_price, date) "
+                              "VALUES (?, ?, ?, ?)");
+            query.addBindValue(QString::fromStdString(id));
+            query.addBindValue(QString::fromStdString(car_name));
+            query.addBindValue(QString::number(total));
+            query.addBindValue(QString::number(date));
+            query.exec();
 
-        QMessageBox::information(this, "완료", "가까운 지점에 방문하여\n차를 수령하십시오.");
-        this->close();
+            QMessageBox::information(this, "완료", "가까운 지점에 방문하여\n차를 수령하십시오.");
+            this->close();
+        }
+
     }
 }
 

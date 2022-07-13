@@ -61,6 +61,74 @@
     <string>렌트</string>
    </property>
   </widget>
+  <widget class="QRadioButton" name="all">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>전체</string>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="diesel">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>30</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>경유</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="gasoline">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>30</y>
+     <width>61</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>휘발유</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="lpg">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>30</y>
+     <width>51</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>LPG</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="elec">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>30</y>
+     <width>61</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>전기차</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

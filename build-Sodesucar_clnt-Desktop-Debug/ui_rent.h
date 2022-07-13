@@ -14,6 +14,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTableWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,6 +25,11 @@ public:
     QTableWidget *list;
     QPushButton *exit_btn;
     QPushButton *rent_btn;
+    QRadioButton *all;
+    QRadioButton *diesel;
+    QRadioButton *gasoline;
+    QRadioButton *lpg;
+    QRadioButton *elec;
 
     void setupUi(QDialog *rent)
     {
@@ -43,6 +49,22 @@ public:
         rent_btn = new QPushButton(rent);
         rent_btn->setObjectName(QString::fromUtf8("rent_btn"));
         rent_btn->setGeometry(QRect(770, 15, 89, 30));
+        all = new QRadioButton(rent);
+        all->setObjectName(QString::fromUtf8("all"));
+        all->setGeometry(QRect(10, 30, 51, 23));
+        all->setChecked(true);
+        diesel = new QRadioButton(rent);
+        diesel->setObjectName(QString::fromUtf8("diesel"));
+        diesel->setGeometry(QRect(80, 30, 51, 23));
+        gasoline = new QRadioButton(rent);
+        gasoline->setObjectName(QString::fromUtf8("gasoline"));
+        gasoline->setGeometry(QRect(150, 30, 61, 23));
+        lpg = new QRadioButton(rent);
+        lpg->setObjectName(QString::fromUtf8("lpg"));
+        lpg->setGeometry(QRect(230, 30, 51, 23));
+        elec = new QRadioButton(rent);
+        elec->setObjectName(QString::fromUtf8("elec"));
+        elec->setGeometry(QRect(290, 30, 61, 23));
 
         retranslateUi(rent);
 
@@ -54,6 +76,11 @@ public:
         rent->setWindowTitle(QApplication::translate("rent", "Dialog", nullptr));
         exit_btn->setText(QApplication::translate("rent", "\353\222\244\353\241\234\352\260\200\352\270\260", nullptr));
         rent_btn->setText(QApplication::translate("rent", "\353\240\214\355\212\270", nullptr));
+        all->setText(QApplication::translate("rent", "\354\240\204\354\262\264", nullptr));
+        diesel->setText(QApplication::translate("rent", "\352\262\275\354\234\240", nullptr));
+        gasoline->setText(QApplication::translate("rent", "\355\234\230\353\260\234\354\234\240", nullptr));
+        lpg->setText(QApplication::translate("rent", "LPG", nullptr));
+        elec->setText(QApplication::translate("rent", "\354\240\204\352\270\260\354\260\250", nullptr));
     } // retranslateUi
 
 };

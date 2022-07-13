@@ -6,6 +6,7 @@
 #include "rent.h"
 #include "user.h"
 #include "reservation.h"
+#include "chat.h"
 
 namespace Ui {
 class mainpage;

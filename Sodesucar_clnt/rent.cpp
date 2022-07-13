@@ -9,7 +9,8 @@ rent::rent(std::string id, QWidget *parent) :
 {
     ui->setupUi(this);
     this->id = id;
-    show_carlist();
+    type = "all";
+    show_carlist(type);
 
     query_string = "SELECT cash FROM userTBL WHERE ID='" + id + "'";
     query.exec(QString::fromStdString(query_string));
@@ -44,7 +45,7 @@ void rent::on_rent_btn_clicked()
         rc.setModal(true);
         rc.exec();
 
-        show_carlist();
+        show_carlist(type);
     }
 }
 
@@ -53,10 +54,13 @@ void rent::on_exit_btn_clicked()
     this->close();
 }
 
-void rent::show_carlist()
+void rent::show_carlist(std::string type)
 {
     ui->list->clear();
-    query_string = "SELECT * FROM carTBL";
+    if(type == "all")
+        query_string = "SELECT * FROM carTBL";
+    else
+        query_string = "SELECT * FROM carTBL WHERE kind='" + type + "'";
     query.exec(QString::fromStdString(query_string));
     rec = query.record();
     ui->list->setRowCount(query.size());
@@ -75,4 +79,34 @@ void rent::show_carlist()
         ui->list->setItem(i,3,new QTableWidgetItem(query.value(3).toString()));
         ui->list->setItem(i++,4,new QTableWidgetItem(query.value(4).toString()));
     }
+}
+
+void rent::on_all_clicked()
+{
+    type = "all";
+    show_carlist(type);
+}
+
+void rent::on_diesel_clicked()
+{
+    type = "경유";
+    show_carlist(type);
+}
+
+void rent::on_gasoline_clicked()
+{
+    type = "휘발유";
+    show_carlist(type);
+}
+
+void rent::on_lpg_clicked()
+{
+    type = "LPG";
+    show_carlist(type);
+}
+
+void rent::on_elec_clicked()
+{
+    type = "전기차";
+    show_carlist(type);
 }
