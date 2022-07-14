@@ -33,49 +33,80 @@ public:
     QPushButton *pushButton_2;
     QLabel *total_label;
     QLabel *disc_label;
+    QLabel *label;
 
     void setupUi(QDialog *rent_check)
     {
         if (rent_check->objectName().isEmpty())
             rent_check->setObjectName(QString::fromUtf8("rent_check"));
-        rent_check->resize(400, 300);
+        rent_check->resize(400, 348);
+        rent_check->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         date = new QSpinBox(rent_check);
         date->setObjectName(QString::fromUtf8("date"));
-        date->setGeometry(QRect(305, 50, 61, 26));
+        date->setGeometry(QRect(305, 220, 61, 26));
         date->setMinimum(1);
         date_label = new QLabel(rent_check);
         date_label->setObjectName(QString::fromUtf8("date_label"));
-        date_label->setGeometry(QRect(300, 30, 81, 17));
+        date_label->setGeometry(QRect(300, 200, 81, 17));
         name_label = new QLabel(rent_check);
         name_label->setObjectName(QString::fromUtf8("name_label"));
-        name_label->setGeometry(QRect(10, 30, 250, 17));
+        name_label->setGeometry(QRect(10, 60, 250, 17));
         kind_label = new QLabel(rent_check);
         kind_label->setObjectName(QString::fromUtf8("kind_label"));
-        kind_label->setGeometry(QRect(10, 70, 250, 17));
+        kind_label->setGeometry(QRect(10, 100, 250, 17));
         cc_label = new QLabel(rent_check);
         cc_label->setObjectName(QString::fromUtf8("cc_label"));
-        cc_label->setGeometry(QRect(10, 110, 250, 17));
+        cc_label->setGeometry(QRect(10, 140, 250, 17));
         count_label = new QLabel(rent_check);
         count_label->setObjectName(QString::fromUtf8("count_label"));
-        count_label->setGeometry(QRect(10, 190, 250, 17));
+        count_label->setGeometry(QRect(10, 220, 250, 17));
         sure = new QLabel(rent_check);
         sure->setObjectName(QString::fromUtf8("sure"));
-        sure->setGeometry(QRect(190, 220, 171, 17));
+        sure->setGeometry(QRect(180, 270, 171, 17));
         price_label = new QLabel(rent_check);
         price_label->setObjectName(QString::fromUtf8("price_label"));
-        price_label->setGeometry(QRect(10, 150, 250, 17));
+        price_label->setGeometry(QRect(10, 180, 250, 17));
         pushButton = new QPushButton(rent_check);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(180, 250, 89, 25));
+        pushButton->setGeometry(QRect(180, 300, 89, 25));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 177, 244);\n"
+"	color: rgb(255, 255, 255);\n"
+"    border:none\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 177, 244);\n"
+"   border:none\n"
+"}"));
         pushButton_2 = new QPushButton(rent_check);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(290, 250, 89, 25));
+        pushButton_2->setGeometry(QRect(290, 300, 89, 25));
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 177, 244);\n"
+"	color: rgb(255, 255, 255);\n"
+"    border:none\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 177, 244);\n"
+"   border:none\n"
+"}"));
         total_label = new QLabel(rent_check);
         total_label->setObjectName(QString::fromUtf8("total_label"));
-        total_label->setGeometry(QRect(10, 270, 121, 17));
+        total_label->setGeometry(QRect(10, 300, 121, 17));
         disc_label = new QLabel(rent_check);
         disc_label->setObjectName(QString::fromUtf8("disc_label"));
-        disc_label->setGeometry(QRect(10, 230, 121, 17));
+        disc_label->setGeometry(QRect(10, 260, 121, 17));
+        label = new QLabel(rent_check);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(10, 0, 181, 51));
+        QFont font;
+        font.setPointSize(22);
+        font.setBold(true);
+        font.setWeight(75);
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("color: rgb(0, 177, 244);"));
 
         retranslateUi(rent_check);
 
@@ -96,6 +127,7 @@ public:
         pushButton_2->setText(QApplication::translate("rent_check", "\354\225\204\353\213\210\354\230\244", nullptr));
         total_label->setText(QApplication::translate("rent_check", "TextLabel", nullptr));
         disc_label->setText(QApplication::translate("rent_check", "TextLabel", nullptr));
+        label->setText(QApplication::translate("rent_check", "SODESUCAR", nullptr));
     } // retranslateUi
 
 };

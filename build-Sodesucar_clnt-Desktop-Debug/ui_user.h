@@ -41,6 +41,7 @@ public:
         if (user->objectName().isEmpty())
             user->setObjectName(QString::fromUtf8("user"));
         user->resize(330, 244);
+        user->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         id_text = new QLineEdit(user);
         id_text->setObjectName(QString::fromUtf8("id_text"));
         id_text->setGeometry(QRect(10, 40, 130, 25));
@@ -69,22 +70,51 @@ public:
         phone_label->setGeometry(QRect(10, 170, 67, 17));
         cash_label = new QLabel(user);
         cash_label->setObjectName(QString::fromUtf8("cash_label"));
-        cash_label->setGeometry(QRect(170, 50, 151, 17));
+        cash_label->setGeometry(QRect(180, 50, 151, 17));
         point_label = new QLabel(user);
         point_label->setObjectName(QString::fromUtf8("point_label"));
-        point_label->setGeometry(QRect(170, 90, 151, 17));
+        point_label->setGeometry(QRect(180, 90, 151, 17));
         edit_btn = new QPushButton(user);
         edit_btn->setObjectName(QString::fromUtf8("edit_btn"));
         edit_btn->setGeometry(QRect(220, 160, 89, 25));
+        edit_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 177, 244);\n"
+"    border:none\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(0, 177, 244);\n"
+"	color: rgb(255, 255, 255);\n"
+"}"));
         exit_btn = new QPushButton(user);
         exit_btn->setObjectName(QString::fromUtf8("exit_btn"));
         exit_btn->setGeometry(QRect(220, 200, 89, 25));
+        exit_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 177, 244);\n"
+"	color: rgb(255, 255, 255);\n"
+"    border:none\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 177, 244);\n"
+"   border:none\n"
+"}"));
         charge_btn = new QPushButton(user);
         charge_btn->setObjectName(QString::fromUtf8("charge_btn"));
         charge_btn->setGeometry(QRect(220, 120, 89, 25));
+        charge_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background-color: rgb(0, 177, 244);\n"
+"	color: rgb(255, 255, 255);\n"
+"    border:none\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	color: rgb(0, 177, 244);\n"
+"   border:none\n"
+"}"));
         grade_label = new QLabel(user);
         grade_label->setObjectName(QString::fromUtf8("grade_label"));
-        grade_label->setGeometry(QRect(170, 10, 151, 17));
+        grade_label->setGeometry(QRect(180, 10, 151, 17));
 
         retranslateUi(user);
 

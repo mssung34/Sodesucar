@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QLineEdit" name="id_text">
    <property name="geometry">
     <rect>
@@ -114,7 +117,7 @@
   <widget class="QLabel" name="cash_label">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>180</x>
      <y>50</y>
      <width>151</width>
      <height>17</height>
@@ -127,7 +130,7 @@
   <widget class="QLabel" name="point_label">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>180</x>
      <y>90</y>
      <width>151</width>
      <height>17</height>
@@ -146,6 +149,17 @@
      <height>25</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 177, 244);
+    border:none
+}
+QPushButton:hover{
+	background-color: rgb(0, 177, 244);
+	color: rgb(255, 255, 255);
+}</string>
+   </property>
    <property name="text">
     <string>수정</string>
    </property>
@@ -158,6 +172,18 @@
      <width>89</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 177, 244);
+	color: rgb(255, 255, 255);
+    border:none
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 177, 244);
+   border:none
+}</string>
    </property>
    <property name="text">
     <string>뒤로가기</string>
@@ -172,6 +198,18 @@
      <height>25</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 177, 244);
+	color: rgb(255, 255, 255);
+    border:none
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 177, 244);
+   border:none
+}</string>
+   </property>
    <property name="text">
     <string>충전</string>
    </property>
@@ -179,7 +217,7 @@
   <widget class="QLabel" name="grade_label">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>180</x>
      <y>10</y>
      <width>151</width>
      <height>17</height>

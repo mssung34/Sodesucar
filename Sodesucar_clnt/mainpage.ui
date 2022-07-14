@@ -6,98 +6,242 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>216</width>
-    <height>181</height>
+    <width>510</width>
+    <height>270</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QPushButton" name="rent_btn">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>10</y>
+     <y>60</y>
      <width>89</width>
-     <height>25</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="text">
-    <string>렌트카 예약</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../다운로드/car_icon_126245.png</normaloff>../../../다운로드/car_icon_126245.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>80</width>
+     <height>80</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="tour_btn">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>50</y>
+     <x>210</x>
+     <y>60</y>
      <width>89</width>
-     <height>25</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="text">
-    <string>휴양지 정보</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../다운로드/pngwing.com.png</normaloff>../../../다운로드/pngwing.com.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="user_btn">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>90</y>
+     <x>310</x>
+     <y>60</y>
      <width>89</width>
-     <height>25</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="text">
-    <string>내정보</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../다운로드/pngegg.png</normaloff>../../../다운로드/pngegg.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>45</width>
+     <height>45</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="exit_btn">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>130</y>
-     <width>89</width>
-     <height>25</height>
+     <x>460</x>
+     <y>0</y>
+     <width>41</width>
+     <height>41</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border:none</string>
+   </property>
    <property name="text">
-    <string>로그아웃</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../다운로드/png-transparent-black-power-button-logo-computer-icons-button-power-symbol-on-off-button-window-symbol-on-off-button.png</normaloff>../../../다운로드/png-transparent-black-power-button-logo-computer-icons-button-power-symbol-on-off-button-window-symbol-on-off-button.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="reservation_btn">
    <property name="geometry">
     <rect>
      <x>110</x>
-     <y>10</y>
+     <y>60</y>
      <width>89</width>
-     <height>25</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="text">
-    <string>예약현황</string>
+    <string/>
    </property>
-  </widget>
-  <widget class="QPushButton" name="shop_btn">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>50</y>
-     <width>89</width>
-     <height>25</height>
-    </rect>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../다운로드/document_80398.png</normaloff>../../../다운로드/document_80398.png</iconset>
    </property>
-   <property name="text">
-    <string>포인트상점</string>
+   <property name="iconSize">
+    <size>
+     <width>40</width>
+     <height>50</height>
+    </size>
    </property>
   </widget>
   <widget class="QPushButton" name="chat_btn">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>90</y>
+     <x>410</x>
+     <y>60</y>
      <width>89</width>
-     <height>25</height>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../다운로드/headset_icon-icons.com_69367.png</normaloff>../../../다운로드/headset_icon-icons.com_69367.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>50</width>
+     <height>50</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>3</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>22</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 177, 244);</string>
+   </property>
+   <property name="text">
+    <string>SODESUCAR</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>190</y>
+     <width>71</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>렌트카 예약</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>125</x>
+     <y>190</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>예약 확인</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>218</x>
+     <y>190</y>
+     <width>71</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>휴양지 정보</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>334</x>
+     <y>190</y>
+     <width>41</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>내정보</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>427</x>
+     <y>190</y>
+     <width>61</width>
+     <height>17</height>
     </rect>
    </property>
    <property name="text">

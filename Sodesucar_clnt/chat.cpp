@@ -3,7 +3,7 @@
 #include <QMessageBox>
 
 
-chat::chat(QWidget *parent) :
+chat::chat(std::string id, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::chat)
 {
@@ -11,14 +11,30 @@ chat::chat(QWidget *parent) :
     ptcp = new tcp(this);
     connect(ptcp, SIGNAL(setMsg(QString)), this, SLOT(showMsg(QString)));
     ptcp->start();
+    sock = ptcp->getsock();
+    this->id = id;
 }
 
 chat::~chat()
 {
     delete ui;
+    delete ptcp;
 }
 
 void chat::showMsg(QString msg)
 {
-    ui->textbox->setText(msg);
+    ui->textbox->append(msg);
+}
+
+void chat::on_enter_btn_clicked()
+{
+    std::string msg ="[" + id + "] : " + ui->write_text->text().toStdString();
+    send(*sock, msg.c_str(), 1024, 0);
+    ui->write_text->clear();
+}
+
+void chat::closeEvent(QCloseEvent*)
+{
+    shutdown(*sock, SHUT_RDWR);
+    delete ptcp;
 }

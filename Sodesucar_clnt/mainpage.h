@@ -31,8 +31,6 @@ private slots:
 
     void on_reservation_btn_clicked();
 
-    void on_shop_btn_clicked();
-
     void on_chat_btn_clicked();
 
 private:

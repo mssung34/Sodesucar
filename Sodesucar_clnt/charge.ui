@@ -6,31 +6,53 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>284</width>
-    <height>123</height>
+    <width>265</width>
+    <height>111</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QLineEdit" name="pay_text">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>50</y>
+     <y>40</y>
      <width>130</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;
+border-bottom:0.5px solid #000;</string>
+   </property>
+   <property name="placeholderText">
+    <string>충전금액 입력</string>
    </property>
   </widget>
   <widget class="QPushButton" name="ok_btn">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>180</x>
      <y>20</y>
-     <width>89</width>
+     <width>61</width>
      <height>25</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(0, 177, 244);
+	color: rgb(255, 255, 255);
+    border:none
+}
+QPushButton:hover{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 177, 244);
+   border:none
+}</string>
    </property>
    <property name="text">
     <string>확인</string>
@@ -39,27 +61,25 @@
   <widget class="QPushButton" name="exit_btn">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>180</x>
      <y>60</y>
-     <width>89</width>
+     <width>61</width>
      <height>25</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 177, 244);
+    border:none
+}
+QPushButton:hover{
+	background-color: rgb(0, 177, 244);
+	color: rgb(255, 255, 255);
+}</string>
+   </property>
    <property name="text">
     <string>취소</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>91</width>
-     <height>17</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>충전금액 입력</string>
    </property>
   </widget>
  </widget>
