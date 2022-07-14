@@ -11,7 +11,6 @@ chat::chat(std::string id, QWidget *parent) :
     ptcp = new tcp(this);
     connect(ptcp, SIGNAL(setMsg(QString)), this, SLOT(showMsg(QString)));
     ptcp->start();
-    sock = ptcp->getsock();
     this->id = id;
 }
 
@@ -29,12 +28,12 @@ void chat::showMsg(QString msg)
 void chat::on_enter_btn_clicked()
 {
     std::string msg ="[" + id + "] : " + ui->write_text->text().toStdString();
-    send(*sock, msg.c_str(), 1024, 0);
+    send(ptcp->sock, msg.c_str(), 1024, 0);
     ui->write_text->clear();
 }
 
 void chat::closeEvent(QCloseEvent*)
 {
-    shutdown(*sock, SHUT_RDWR);
-    delete ptcp;
+    ptcp->terminate();
+    shutdown(ptcp->sock, SHUT_RDWR);
 }

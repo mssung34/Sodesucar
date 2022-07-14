@@ -12,20 +12,13 @@ int open_sock()
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == -1)
     {
         qDebug()<<"connect error";
-        return -1;
     }
-    else
-        return sock;
-}
-
-void close_sock(int sock)
-{
-    shutdown(sock, SHUT_RDWR);
+    return sock;
 }
 
 tcp::tcp(QObject* parent) : QThread(parent)
 {
-    this->sock = open_sock();
+    sock = open_sock();
 }
 
 tcp::~tcp()
@@ -40,10 +33,5 @@ void tcp::run()
         emit tcp::setMsg(QString(msg));
         memset(msg, 0, sizeof(msg));
     }
-}
-
-int* tcp::getsock()
-{
-    return &sock;
 }
 

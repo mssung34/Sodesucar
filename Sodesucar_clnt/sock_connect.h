@@ -11,18 +11,15 @@
 
 int open_sock();
 
-void close_sock();
-
 class tcp : public QThread
 {
     Q_OBJECT
 public:
     explicit tcp(QObject* parent = 0);
     ~tcp();
-    int* getsock();
+    int sock;
 
 private:
-    int sock;
     void run();
 
 signals:

@@ -28,7 +28,6 @@ private slots:
 
 private:
     Ui::chat *ui;
-    int *sock;
     tcp *ptcp;
     std::string id;
 };
