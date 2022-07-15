@@ -73,3 +73,4 @@ void mainpage::chat_open(QString msg)
     chat.exec();
     this->show();
 }
+
