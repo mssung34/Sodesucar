@@ -105,7 +105,7 @@ public:
 
     void retranslateUi(QDialog *rent)
     {
-        rent->setWindowTitle(QApplication::translate("rent", "Dialog", nullptr));
+        rent->setWindowTitle(QApplication::translate("rent", "Rent", nullptr));
         exit_btn->setText(QApplication::translate("rent", "\353\222\244\353\241\234\352\260\200\352\270\260", nullptr));
         rent_btn->setText(QApplication::translate("rent", "\353\240\214\355\212\270", nullptr));
         all->setText(QApplication::translate("rent", "\354\240\204\354\262\264", nullptr));

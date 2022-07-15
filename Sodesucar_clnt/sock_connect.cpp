@@ -7,7 +7,7 @@ int open_sock()
     memset(&serv_addr, 0, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_addr.s_addr = inet_addr("10.10.20.231");
-    serv_addr.sin_port = htons(atoi("9021"));
+    serv_addr.sin_port = htons(atoi("9022"));
 
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == -1)
     {

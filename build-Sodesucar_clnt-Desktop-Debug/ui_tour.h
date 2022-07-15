@@ -76,7 +76,7 @@ public:
 
     void retranslateUi(QDialog *tour)
     {
-        tour->setWindowTitle(QString());
+        tour->setWindowTitle(QApplication::translate("tour", "Tour", nullptr));
         exit_btn->setText(QApplication::translate("tour", "\353\222\244\353\241\234\352\260\200\352\270\260", nullptr));
         label->setText(QApplication::translate("tour", "SODESUCAR", nullptr));
     } // retranslateUi

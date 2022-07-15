@@ -116,7 +116,7 @@ public:
 
     void retranslateUi(QDialog *mainpage)
     {
-        mainpage->setWindowTitle(QApplication::translate("mainpage", "Dialog", nullptr));
+        mainpage->setWindowTitle(QApplication::translate("mainpage", "Main", nullptr));
         rent_btn->setText(QString());
         tour_btn->setText(QString());
         user_btn->setText(QString());

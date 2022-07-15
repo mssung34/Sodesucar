@@ -34,6 +34,6 @@ void chat::on_enter_btn_clicked()
 
 void chat::closeEvent(QCloseEvent*)
 {
-    ptcp->terminate();
     shutdown(ptcp->sock, SHUT_RDWR);
+    ptcp->terminate();
 }

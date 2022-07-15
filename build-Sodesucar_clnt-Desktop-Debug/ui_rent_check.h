@@ -115,7 +115,7 @@ public:
 
     void retranslateUi(QDialog *rent_check)
     {
-        rent_check->setWindowTitle(QApplication::translate("rent_check", "Dialog", nullptr));
+        rent_check->setWindowTitle(QApplication::translate("rent_check", "Rent", nullptr));
         date_label->setText(QApplication::translate("rent_check", "<\353\214\200\354\227\254\354\235\274\354\210\230>", nullptr));
         name_label->setText(QApplication::translate("rent_check", "TextLabel", nullptr));
         kind_label->setText(QApplication::translate("rent_check", "TextLabel", nullptr));

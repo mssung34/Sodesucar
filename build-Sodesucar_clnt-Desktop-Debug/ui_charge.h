@@ -68,7 +68,7 @@ public:
 
     void retranslateUi(QDialog *charge)
     {
-        charge->setWindowTitle(QApplication::translate("charge", "Dialog", nullptr));
+        charge->setWindowTitle(QApplication::translate("charge", "Charge", nullptr));
         pay_text->setPlaceholderText(QApplication::translate("charge", "\354\266\251\354\240\204\352\270\210\354\225\241 \354\236\205\353\240\245", nullptr));
         ok_btn->setText(QApplication::translate("charge", "\355\231\225\354\235\270", nullptr));
         exit_btn->setText(QApplication::translate("charge", "\354\267\250\354\206\214", nullptr));

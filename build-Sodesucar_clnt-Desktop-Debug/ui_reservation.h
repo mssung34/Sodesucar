@@ -86,7 +86,7 @@ public:
 
     void retranslateUi(QDialog *reservation)
     {
-        reservation->setWindowTitle(QApplication::translate("reservation", "Dialog", nullptr));
+        reservation->setWindowTitle(QApplication::translate("reservation", "Reservation", nullptr));
         cancle_btn->setText(QApplication::translate("reservation", "\354\230\210\354\225\275\354\267\250\354\206\214", nullptr));
         exit_btn->setText(QApplication::translate("reservation", "\353\222\244\353\241\234\352\260\200\352\270\260", nullptr));
         label_3->setText(QApplication::translate("reservation", "SODESUCAR", nullptr));

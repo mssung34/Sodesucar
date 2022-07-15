@@ -123,7 +123,7 @@ public:
 
     void retranslateUi(QDialog *user)
     {
-        user->setWindowTitle(QApplication::translate("user", "Dialog", nullptr));
+        user->setWindowTitle(QApplication::translate("user", "UserInfo", nullptr));
         id_label->setText(QApplication::translate("user", "ID", nullptr));
         pw_label->setText(QApplication::translate("user", "PW", nullptr));
         name_label->setText(QApplication::translate("user", "Name", nullptr));

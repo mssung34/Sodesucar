@@ -118,7 +118,7 @@ public:
 
     void retranslateUi(QDialog *signup)
     {
-        signup->setWindowTitle(QApplication::translate("signup", "\355\232\214\354\233\220\352\260\200\354\236\205", nullptr));
+        signup->setWindowTitle(QApplication::translate("signup", "Signup", nullptr));
         id_text->setPlaceholderText(QApplication::translate("signup", "ID", nullptr));
         pw_text->setPlaceholderText(QApplication::translate("signup", "PW", nullptr));
         pw2_text->setPlaceholderText(QApplication::translate("signup", "PW Check", nullptr));

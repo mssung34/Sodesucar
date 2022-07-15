@@ -66,7 +66,7 @@ public:
 
     void retranslateUi(QDialog *chat)
     {
-        chat->setWindowTitle(QApplication::translate("chat", "Dialog", nullptr));
+        chat->setWindowTitle(QApplication::translate("chat", "Chat", nullptr));
         enter_btn->setText(QApplication::translate("chat", "\354\236\205\353\240\245", nullptr));
         label_3->setText(QApplication::translate("chat", "SODESUCAR", nullptr));
     } // retranslateUi
